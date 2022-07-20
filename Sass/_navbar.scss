@@ -1,0 +1,78 @@
+@import 'colors';
+@import 'media-queries';
+
+@mixin align-center {
+  display: flex;
+  align-items: center;  
+}
+
+.navbar{
+  @include align-center;
+  background-color: $light;
+  height: 80px;
+  justify-content: space-between;
+  padding: 0.5rem calc((100vh - 1200px)/2);
+  z-index: 10;
+  position: relative;
+  padding-left: 24px;
+  padding-right: 24px;
+
+  &__logo{
+    color: $dark;
+    text-decoration: none;
+    cursor: pointer;
+    font-size: 2rem;
+  }
+
+  &__bars{
+    opacity: 0;
+    cursor: pointer;
+
+    //using it on tablet mode
+    @include tablet{
+      opacity: 1;
+      color: $dark;
+      font-size: 1.6rem;
+      position: absolute;
+      right: 24px;
+    }
+
+    &:hover{
+      color: $lime;
+      transform: all 1s ease;
+    }
+  }
+
+  &__menu{
+    @include tablet{
+      display: none;
+    }
+
+    &--links{
+      color: $dark;
+      text-decoration: none;
+      padding: 0 1rem;
+
+      &:hover{
+        color: $lime;
+        transition: all 0.3s ease;
+      }
+    }
+
+    #button{
+      padding: 12px 24px;
+      border: none;
+      outline: none;
+      border-radius: 4px;
+      background-color: $lime;
+      margin-left: 16px;
+      color: $light;   
+      
+      &:hover{
+        background-color: $orangeRed;
+        transition: all 0.3s ease;
+      }
+    }
+    
+  }
+}

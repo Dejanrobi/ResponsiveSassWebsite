@@ -1,0 +1,28 @@
+//SIZE
+@mixin largetablet{
+  @media screen and (max-width: 1162px){
+    @content;
+  }
+}
+
+
+//TABLET
+@mixin tablet{
+  //we will pass the items here.Whatever we pass here, will be getting the styles at that particular breakpoint.
+  @media screen and (max-width:768px) {
+    @content; 
+  }
+}
+
+//MOBILE
+@mixin mobile{
+  @media screen and (max-width:500px) {
+    @content; 
+  }
+}
+
+@mixin center{
+  display: block;
+  margin-left: auto;
+  margin-right: auto; 
+}
